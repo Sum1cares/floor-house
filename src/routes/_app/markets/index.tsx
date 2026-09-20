@@ -23,8 +23,8 @@ function MarketsPage() {
       <p className="text-xs tracking-[0.22em] text-subtle uppercase">Open on Ground</p>
       <h1 className="font-display text-4xl tracking-tight">Markets</h1>
       <p className="mt-2 max-w-xl text-sm text-muted">
-        Ground owns the wall. Occupancy, a Fed cut, McDonald’s same-store. The casino is labeled.
-        It sits next to the assets it is gossiping about.
+        Ground owns the wall. Occupancy, a Fed cut, McDonald’s same-store. Paper contracts. House
+        credits. Not real-money gambling. The casino is labeled.
       </p>
       <div className="mt-6 flex flex-wrap gap-2">
         {cats.map((c) => (

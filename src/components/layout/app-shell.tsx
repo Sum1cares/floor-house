@@ -265,6 +265,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
+      <p className="border-b border-border bg-elevated/80 px-3 py-1.5 text-center text-[11px] leading-snug text-subtle sm:px-6">
+        Demonstration floor · paper capital · not an offer to sell securities
+      </p>
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)]">
         <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] flex-col gap-6 overflow-y-auto py-6 pr-4 pl-6 lg:flex">
