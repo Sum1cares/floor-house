@@ -18,7 +18,7 @@ android/app/.cxx
 ios/App/Pods
 ios/App/build
 ios/DerivedData
-screenshots
+/screenshots
 .grok
 AGENTS.md
 AGENTS.project.md
