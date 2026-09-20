@@ -16,12 +16,30 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+def uploadStore = System.getenv("FLOOR_UPLOAD_STORE_FILE")
+if (uploadStore && file(uploadStore).exists()) {
+    android.signingConfigs {
+        release {
+            storeFile file(uploadStore)
+            storePassword System.getenv("FLOOR_UPLOAD_STORE_PASSWORD")
+            keyAlias System.getenv("FLOOR_UPLOAD_KEY_ALIAS") ?: "upload"
+            keyPassword System.getenv("FLOOR_UPLOAD_KEY_PASSWORD") ?: System.getenv("FLOOR_UPLOAD_STORE_PASSWORD")
+        }
+    }
+    android.buildTypes.release.signingConfig = android.signingConfigs.release
 }
 
 repositories {

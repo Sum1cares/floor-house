@@ -59,8 +59,9 @@ test("an explicit process-env override wins over the file", () => {
   assert.equal(merged.PATH, "/usr/bin");
 });
 
-test("the template ships auth off", () => {
-  assert.deepEqual(readAppEnv(projectRoot()), { VITE_AUTH_ENABLED: "false" });
+test("this house ships sign-in on", () => {
+  const env = readAppEnv(projectRoot());
+  assert.notEqual(env.VITE_AUTH_ENABLED, "false");
 });
 
 test("vite loadEnv resolves the wrapped value", () => {
@@ -80,7 +81,8 @@ test("the wrapped command runs with the app env applied", async () => {
     "-e",
     PRINT_FLAG,
   ]);
-  assert.equal(stdout, "false");
+  // FLOOR is an accounts product: sign-in stays on unless the file sets "false".
+  assert.notEqual(stdout, "false");
 });
 
 test("the wrapped command sees an explicit override, not the file value", async () => {
@@ -124,5 +126,5 @@ test("the CLI still runs when invoked through a symlinked path", async () => {
     "-e",
     PRINT_FLAG,
   ]);
-  assert.equal(stdout, "false");
+  assert.notEqual(stdout, "false");
 });

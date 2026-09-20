@@ -2,18 +2,18 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
+import { LeaveHouse } from "@/components/leave-house";
 import { RiskStack } from "@/components/risk-stack";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Textarea } from "@/components/ui/textarea";
 import { RedirectToSignIn } from "@/lib/auth/gates";
-import { signOut } from "@/lib/auth/client";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { membersNeeded, nextBenefit } from "@/lib/commons";
 import { toastErr } from "@/lib/errors";
 import { listCommons } from "@/lib/server/commons";
-import { deleteMe, updateMe } from "@/lib/server/me";
+import { updateMe } from "@/lib/server/me";
 import { INCOME_BANDS, TIERS, TIER_ORDER, type TierId } from "@/lib/tiers";
 import { useProfile } from "@/lib/use-profile";
 import { compactDollars, cn } from "@/lib/utils";
@@ -36,16 +36,6 @@ function MembershipPage() {
     onSuccess: () => {
       toast.success("Membership updated.");
       void qc.invalidateQueries({ queryKey: ["me"] });
-    },
-    onError: toastErr,
-  });
-  const leave = useMutation({
-    mutationFn: () => deleteMe(),
-    onSuccess: () => {
-      toast.success("Membership closed.");
-      void signOut("/").catch(() => {
-        window.location.href = "/";
-      });
     },
     onError: toastErr,
   });
@@ -114,25 +104,9 @@ function MembershipPage() {
           ))}
         </div>
 
-        <section className="mt-16 max-w-lg rounded-3xl bg-surface p-5 hairline">
-          <h2 className="font-display text-2xl">Leave the house</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            Deletes your profile, positions, follows, bookmarks, and sessions. Posts stay on the
-            tape as Former member. Required by the stores. This cannot be undone.
-          </p>
-          <Button
-            className="mt-4"
-            variant="danger"
-            disabled={leave.isPending}
-            onClick={() => {
-              if (window.confirm("Close this membership and delete your personal data?")) {
-                leave.mutate();
-              }
-            }}
-          >
-            {leave.isPending ? "Closing…" : "Delete my membership"}
-          </Button>
-        </section>
+        <div className="mt-16">
+          <LeaveHouse />
+        </div>
       </div>
       <aside>
         <div className="rounded-3xl bg-surface p-5 hairline">

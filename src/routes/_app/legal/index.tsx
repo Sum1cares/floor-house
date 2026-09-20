@@ -30,6 +30,12 @@ function LegalIndex() {
             <p className="mt-1 text-xs text-muted">Delete your membership. Reach the house.</p>
           </Link>
         </li>
+        <li>
+          <Link to="/legal/delete" className="block rounded-2xl bg-surface p-5 hairline">
+            <p className="font-display text-xl">Delete membership</p>
+            <p className="mt-1 text-xs text-muted">The web door the stores require. Same as Leave the house.</p>
+          </Link>
+        </li>
       </ul>
     </div>
   );

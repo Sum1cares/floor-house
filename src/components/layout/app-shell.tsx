@@ -297,6 +297,10 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Link to="/legal/support" className="hover:text-fg">
               Support
             </Link>
+            {" · "}
+            <Link to="/legal/delete" className="hover:text-fg">
+              Delete
+            </Link>
           </p>
         </aside>
         <main className="min-w-0 px-3 pt-4 pb-24 sm:px-6 sm:pt-6 lg:pb-10">{children}</main>
@@ -342,6 +346,10 @@ export function AppShell({ children }: { children: ReactNode }) {
             {" · "}
             <Link to="/legal/support" onClick={() => setMenu(false)} className="hover:text-fg">
               Support
+            </Link>
+            {" · "}
+            <Link to="/legal/delete" onClick={() => setMenu(false)} className="hover:text-fg">
+              Delete
             </Link>
           </p>
         </SheetContent>

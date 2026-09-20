@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { type ReactNode, useEffect, useState } from "react";
 import { Toaster } from "sonner";
 import { AgeGate } from "@/components/age-gate";
+import { OfflineBanner } from "@/components/offline-banner";
 import { bootNativeShell } from "@/lib/native";
 
 export function AppProviders({ children }: { children: ReactNode }) {
@@ -16,6 +17,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
   }, []);
   return (
     <QueryClientProvider client={client}>
+      <OfflineBanner />
       {children}
       <AgeGate />
       <Toaster

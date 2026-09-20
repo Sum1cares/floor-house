@@ -24,7 +24,7 @@ function MarketsPage() {
       <h1 className="font-display text-4xl tracking-tight">Markets</h1>
       <p className="mt-2 max-w-xl text-sm text-muted">
         Ground owns the wall. Occupancy, a Fed cut, McDonald’s same-store. Paper contracts. House
-        credits. Not real-money gambling. The casino is labeled.
+        credits. Not real-money gambling. Simulated only.
       </p>
       <div className="mt-6 flex flex-wrap gap-2">
         {cats.map((c) => (

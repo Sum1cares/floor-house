@@ -14,9 +14,13 @@ function SupportPage() {
       <p>
         Sign in, open Membership, and use Leave the house. That deletes your profile, positions,
         follows, bookmarks, notifications, and sessions. Posts stay on the tape as Former member so
-        diligence threads still read.
+        diligence threads still read. The same door is on the web:
       </p>
       <p>
+        <Link to="/legal/delete" className="text-fg underline">
+          Delete membership
+        </Link>
+        {" · "}
         <Link to="/membership" className="text-fg underline">
           Go to membership
         </Link>

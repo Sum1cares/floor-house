@@ -4,4 +4,10 @@
     <string name="title_activity_main">FLOOR</string>
     <string name="package_name">house.floor.app</string>
     <string name="custom_url_scheme">house.floor.app</string>
+    <string name="shortcut_tape">Tape</string>
+    <string name="shortcut_tape_long">Open the FLOOR tape</string>
+    <string name="shortcut_vaults">Vaults</string>
+    <string name="shortcut_vaults_long">Open the vault books</string>
+    <string name="shortcut_markets">Markets</string>
+    <string name="shortcut_markets_long">Open the market wall</string>
 </resources>

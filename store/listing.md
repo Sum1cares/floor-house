@@ -12,10 +12,12 @@ broker-dealer, adviser, bank, or exchange.
 | Subtitle | Cooperative investment house |
 | Package / bundle | `house.floor.app` |
 | Category | Finance |
+| Tags | Social, Simulation, Investing |
 | Age | 18+ (App Store 17+) |
 | Privacy | `/legal/privacy` on the live host |
 | Support | `/legal/support` on the live host |
 | Terms | `/legal/terms` on the live host |
+| Account deletion | `/legal/delete` on the live host (also Membership → Leave the house) |
 
 ## Short description (Play, 80 chars)
 
@@ -39,13 +41,15 @@ The Commons grows with membership: lounge hours, crash pads, donated nights, a h
 
 This app does not take bank deposits, does not execute real trades, and does not offer securities. Balances you see are demonstration buying power. Eighteen and up.
 
+Native features in the Android app: hardware back, share sheet, offline notice, home-screen shortcuts to Tape / Vaults / Markets, and deep links into the house. The WebView is not a browser shortcut — it is the house, with an 18+ gate and in-app account deletion.
+
 ## Play Data safety
 
 - Data collected: name, email, user-generated content, app activity (if you sign in)
 - Not sold
 - Not used for ads
 - Encrypted in transit
-- Users can request deletion in-app (Membership → Leave the house)
+- Users can request deletion in-app (Membership → Leave the house) and on the web (`/legal/delete`)
 
 ## App Store privacy nutrition
 
@@ -56,4 +60,4 @@ This app does not take bank deposits, does not execute real trades, and does not
 
 ## Review notes
 
-Demo credentials are not required — Ground membership opens on first sign-in. Prediction markets settle in house credits. Account deletion is in Membership. Age gate is 18+. Native apps load the live web house in a Capacitor WebView (`house.floor.app`).
+Demo credentials are not required — Ground membership opens on first sign-in. Prediction markets settle in house credits, not cash. Account deletion is in Membership and at /legal/delete. Age gate is 18+ and fails closed. Native apps load the live web house in a Capacitor WebView (`house.floor.app`). This is not a casino, not a broker, and not an offer to sell securities.

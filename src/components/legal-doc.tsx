@@ -28,6 +28,9 @@ export function LegalDoc({
         <Link to="/legal/support" className="hover:text-fg">
           Support
         </Link>
+        <Link to="/legal/delete" className="hover:text-fg">
+          Delete membership
+        </Link>
       </nav>
     </article>
   );

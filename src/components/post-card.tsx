@@ -153,10 +153,15 @@ export function PostCard({
             type="button"
             onClick={() => {
               const url = `${window.location.origin}/post/${post.id}`;
-              void navigator.clipboard.writeText(url).then(
-                () => toast.success("Link copied."),
-                () => toast.message(url),
-              );
+              void (async () => {
+                const { shareUrl } = await import("@/lib/share");
+                const result = await shareUrl({
+                  title: post.title || "FLOOR tape",
+                  text: "From the FLOOR tape.",
+                  url,
+                });
+                if (result === "copied") toast.success("Link copied.");
+              })();
             }}
             className="inline-flex h-9 items-center gap-1.5 rounded-md px-2 text-xs hover:bg-elevated hover:text-fg"
           >

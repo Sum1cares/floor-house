@@ -8,6 +8,8 @@ test("legal paths are readable before the 18+ attestation", () => {
   assert.equal(isLegalPath("/legal/privacy"), true);
   assert.equal(isLegalPath("/legal/terms"), true);
   assert.equal(isLegalPath("/legal/support"), true);
+  assert.equal(isLegalPath("/legal/delete"), true);
+  assert.equal(isLegalPath("/legal/delete/"), true);
   assert.equal(isLegalPath("/"), false);
   assert.equal(isLegalPath("/markets"), false);
   assert.equal(isLegalPath("/membership"), false);

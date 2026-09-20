@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="tape"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_tape"
+        android:shortcutLongLabel="@string/shortcut_tape_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="house.floor.app"
+            android:targetClass="house.floor.app.MainActivity"
+            android:data="https://floor-house.vercel.app/" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="vaults"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_vaults"
+        android:shortcutLongLabel="@string/shortcut_vaults_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="house.floor.app"
+            android:targetClass="house.floor.app.MainActivity"
+            android:data="https://floor-house.vercel.app/vaults" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="markets"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_markets"
+        android:shortcutLongLabel="@string/shortcut_markets_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="house.floor.app"
+            android:targetClass="house.floor.app.MainActivity"
+            android:data="https://floor-house.vercel.app/markets" />
+    </shortcut>
+</shortcuts>

@@ -22,6 +22,7 @@ import { Route as AppCommonsSlugRouteImport } from './routes/_app/commons/$slug'
 import { Route as AppFloorsIndexRouteImport } from './routes/_app/floors/index'
 import { Route as AppFloorsSlugRouteImport } from './routes/_app/floors/$slug'
 import { Route as AppLegalIndexRouteImport } from './routes/_app/legal/index'
+import { Route as AppLegalDeleteRouteImport } from './routes/_app/legal/delete'
 import { Route as AppLegalPrivacyRouteImport } from './routes/_app/legal/privacy'
 import { Route as AppLegalSupportRouteImport } from './routes/_app/legal/support'
 import { Route as AppLegalTermsRouteImport } from './routes/_app/legal/terms'
@@ -97,6 +98,11 @@ const AppLegalIndexRoute = AppLegalIndexRouteImport.update({
   path: '/legal/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppLegalDeleteRoute = AppLegalDeleteRouteImport.update({
+  id: '/legal/delete',
+  path: '/legal/delete',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppLegalPrivacyRoute = AppLegalPrivacyRouteImport.update({
   id: '/legal/privacy',
   path: '/legal/privacy',
@@ -158,6 +164,7 @@ export interface FileRoutesByFullPath {
   '/search': typeof AppSearchRoute
   '/commons/$slug': typeof AppCommonsSlugRoute
   '/floors/$slug': typeof AppFloorsSlugRoute
+  '/legal/delete': typeof AppLegalDeleteRoute
   '/legal/privacy': typeof AppLegalPrivacyRoute
   '/legal/support': typeof AppLegalSupportRoute
   '/legal/terms': typeof AppLegalTermsRoute
@@ -182,6 +189,7 @@ export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
   '/commons/$slug': typeof AppCommonsSlugRoute
   '/floors/$slug': typeof AppFloorsSlugRoute
+  '/legal/delete': typeof AppLegalDeleteRoute
   '/legal/privacy': typeof AppLegalPrivacyRoute
   '/legal/support': typeof AppLegalSupportRoute
   '/legal/terms': typeof AppLegalTermsRoute
@@ -208,6 +216,7 @@ export interface FileRoutesById {
   '/_app/': typeof AppIndexRoute
   '/_app/commons/$slug': typeof AppCommonsSlugRoute
   '/_app/floors/$slug': typeof AppFloorsSlugRoute
+  '/_app/legal/delete': typeof AppLegalDeleteRoute
   '/_app/legal/privacy': typeof AppLegalPrivacyRoute
   '/_app/legal/support': typeof AppLegalSupportRoute
   '/_app/legal/terms': typeof AppLegalTermsRoute
@@ -234,6 +243,7 @@ export interface FileRouteTypes {
     | '/search'
     | '/commons/$slug'
     | '/floors/$slug'
+    | '/legal/delete'
     | '/legal/privacy'
     | '/legal/support'
     | '/legal/terms'
@@ -258,6 +268,7 @@ export interface FileRouteTypes {
     | '/'
     | '/commons/$slug'
     | '/floors/$slug'
+    | '/legal/delete'
     | '/legal/privacy'
     | '/legal/support'
     | '/legal/terms'
@@ -283,6 +294,7 @@ export interface FileRouteTypes {
     | '/_app/'
     | '/_app/commons/$slug'
     | '/_app/floors/$slug'
+    | '/_app/legal/delete'
     | '/_app/legal/privacy'
     | '/_app/legal/support'
     | '/_app/legal/terms'
@@ -397,6 +409,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppLegalIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/legal/delete': {
+      id: '/_app/legal/delete'
+      path: '/legal/delete'
+      fullPath: '/legal/delete'
+      preLoaderRoute: typeof AppLegalDeleteRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/legal/privacy': {
       id: '/_app/legal/privacy'
       path: '/legal/privacy'
@@ -479,6 +498,7 @@ interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppCommonsSlugRoute: typeof AppCommonsSlugRoute
   AppFloorsSlugRoute: typeof AppFloorsSlugRoute
+  AppLegalDeleteRoute: typeof AppLegalDeleteRoute
   AppLegalPrivacyRoute: typeof AppLegalPrivacyRoute
   AppLegalSupportRoute: typeof AppLegalSupportRoute
   AppLegalTermsRoute: typeof AppLegalTermsRoute
@@ -502,6 +522,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppCommonsSlugRoute: AppCommonsSlugRoute,
   AppFloorsSlugRoute: AppFloorsSlugRoute,
+  AppLegalDeleteRoute: AppLegalDeleteRoute,
   AppLegalPrivacyRoute: AppLegalPrivacyRoute,
   AppLegalSupportRoute: AppLegalSupportRoute,
   AppLegalTermsRoute: AppLegalTermsRoute,
