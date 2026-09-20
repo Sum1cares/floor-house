@@ -6,6 +6,8 @@ Ground owns the commons funds and the market wall. Penthouse is the illiquid boo
 
 This is a **demonstration floor**. Simulated capital. Not an offer to sell securities. Eighteen and up.
 
+**GitHub:** [Sum1cares/floor-house](https://github.com/Sum1cares/floor-house)
+
 ## Product
 
 - **Tape** — Hot / New / Top / Following. Restacks, nested diligence, karma.
@@ -22,19 +24,14 @@ npm install
 npm run dev
 ```
 
-Production is a Vercel / Nitro build (`npm run build`). Set `DATABASE_URL` to a Postgres URL for a durable house. Without it the app uses embedded PGLite.
+Production is a Vercel / Nitro build (`npm run build`). The Vercel project is `floor-house` on the sum1cares team. Set `DATABASE_URL` to a Postgres URL for a durable house. Without it the app uses embedded PGLite.
+
+Privacy, terms, and support (required by the stores): `/legal/privacy`, `/legal/terms`, `/legal/support`.
 
 ## Native (Play / App Store)
 
-The Android and iOS shells are Capacitor WebViews of the live house.
+The Android and iOS shells are Capacitor WebViews of the live house (`house.floor.app`).
 
-```
-npm install
-npx cap add android
-npx cap add ios
-npx cap sync
-```
-
-`FLOOR_NATIVE_URL` (see `.env.example`) is the host the shells load. Store copy, privacy URLs, and review notes live in `store/listing.md`.
+Store copy, 1024px App Store icon, 512px Play icon, feature graphic, and phone screenshots live in `store/`. Paste `store/listing.md` into Play Console and App Store Connect.
 
 iOS requires Xcode on a Mac and an Apple Developer Program membership. Google Play requires a Play Console account and a signing key. Sign in with Apple is required before a public iOS listing if other social logins stay on the door.
