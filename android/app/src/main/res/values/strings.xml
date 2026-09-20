@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FLOOR</string>
+    <string name="title_activity_main">FLOOR</string>
+    <string name="package_name">house.floor.app</string>
+    <string name="custom_url_scheme">house.floor.app</string>
+</resources>
